@@ -1,0 +1,140 @@
+/* src/components/Login.css */
+
+/* General body styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  /* Login container for the form */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('../Images/TiffinBack.jpg') no-repeat center center;
+    background-size: cover; /* Ensure the background image covers the entire viewport */
+    padding: 20px;
+    position: relative; /* For decorative circles */
+    overflow: hidden; /* Ensure decorative elements are contained */
+  }
+  
+  .login-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Form styling */
+  .login-container form {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.85); /* Transparent white background for better contrast */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .login-container form input:focus {
+    border-color: #ff7e67;
+    box-shadow: 0 0 8px rgba(255, 126, 103, 0.5);
+    outline: none;
+  }
+  
+  /* Button styling */
+  .login-container form button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background-color: #ff7e67;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .login-container form button:hover {
+    background-color: #ff5733;
+    transform: translateY(-3px);
+  }
+  
+  .login-container form button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Error messages */
+  .error {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    color: #e74c3c;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Add a decorative background for the form */
+  .decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  
+  .decorative-circle:nth-child(1) {
+    top: -80px;
+    left: -80px;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 126, 103, 0.2);
+  }
+  
+  .decorative-circle:nth-child(2) {
+    bottom: -80px;
+    right: -80px;
+    width: 250px;
+    height: 250px;
+    background: rgba(255, 126, 103, 0.3);
+  }
+  
+  .decorative-circle:nth-child(3) {
+    bottom: 10%;
+    left: 15%;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 193, 128, 0.2);
+  }
+  
+  /* Placeholder styling */
+  .login-container form input::placeholder {
+    font-style: italic;
+    color: #aaa;
+  }
+  
+  /* Footer note (optional) */
+  .footer-note {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  

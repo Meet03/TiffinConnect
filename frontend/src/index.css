@@ -1,0 +1,12 @@
+/* src/index.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  

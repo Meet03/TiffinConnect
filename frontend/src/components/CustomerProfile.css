@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* { box-sizing: border-box; }
+
+/* ─── PAGE ───────────────────────────────────────── */
+.cp-page {
+  min-height: 100vh;
+  background: #f4f5f7;
+  font-family: 'Poppins', sans-serif;
+  padding: 32px 24px 60px;
+}
+
+/* ─── LOADING ────────────────────────────────────── */
+.cp-loading {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #888;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cp-spinner {
+  width: 36px; height: 36px;
+  border: 3px solid rgba(230,126,34,0.2);
+  border-top-color: #e67e22;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.cp-spinner-sm {
+  width: 18px; height: 18px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── CONTAINER ──────────────────────────────────── */
+.cp-container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ─── BACK BUTTON ────────────────────────────────── */
+.cp-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  font-size: 0.88rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 28px;
+  transition: color 0.2s, gap 0.2s;
+}
+.cp-back-btn:hover { color: #e67e22; gap: 12px; }
+
+/* ─── HEADER ─────────────────────────────────────── */
+.cp-header {
+  margin-bottom: 32px;
+}
+
+.cp-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 8px;
+}
+
+.cp-header p {
+  font-size: 0.9rem;
+  color: #999;
+  margin: 0;
+}
+
+/* ─── CONTENT CARD ───────────────────────────────── */
+.cp-content {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+/* ─── AVATAR ─────────────────────────────────────── */
+.cp-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.cp-avatar-wrap {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  margin-bottom: 12px;
+}
+
+.cp-avatar-img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e67e22;
+  box-shadow: 0 4px 16px rgba(230,126,34,0.25);
+}
+
+.cp-avatar-placeholder {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e67e22, #cf6d17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 2.5rem;
+  border: 3px solid #e67e22;
+  box-shadow: 0 4px 16px rgba(230,126,34,0.25);
+}
+
+.cp-camera-btn {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 32px;
+  height: 32px;
+  background: #1a1a2e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.cp-camera-btn:hover { background: #e67e22; }
+
+.cp-avatar-hint {
+  font-size: 0.78rem;
+  color: #bbb;
+  margin: 0;
+}
+
+/* ─── FORM ───────────────────────────────────────── */
+.cp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.cp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.cp-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.cp-field label svg {
+  color: #e67e22;
+  font-size: 0.78rem;
+}
+
+.cp-field input,
+.cp-field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #f9f9f9;
+  border: 1.5px solid #ebebeb;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.cp-field input:focus,
+.cp-field textarea:focus {
+  border-color: #e67e22;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
+}
+
+.cp-field input::placeholder,
+.cp-field textarea::placeholder { color: #ccc; }
+
+.cp-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.cp-field-hint {
+  font-size: 0.75rem;
+  color: #bbb;
+  margin-top: 2px;
+}
+
+/* ─── MESSAGE ────────────────────────────────────── */
+.cp-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.87rem;
+  font-weight: 500;
+}
+
+.cp-message.success {
+  background: #f0fef4;
+  border: 1px solid #a9e9b8;
+  color: #1e7e34;
+}
+
+.cp-message.error {
+  background: #fff0f0;
+  border: 1px solid #fcc;
+  color: #c0392b;
+}
+
+/* ─── FORM ACTIONS ───────────────────────────────── */
+.cp-form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.cp-cancel-btn {
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  color: #777;
+  background: #f4f5f7;
+  border: 1.5px solid #ebebeb;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.cp-cancel-btn:hover { background: #ebebeb; color: #333; }
+
+.cp-save-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 32px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: #e67e22;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(230,126,34,0.35);
+  min-width: 130px;
+}
+.cp-save-btn:hover:not(:disabled) {
+  background: #cf6d17;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(230,126,34,0.45);
+}
+.cp-save-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 560px) {
+  .cp-content { padding: 28px 20px; }
+  .cp-form-actions { flex-direction: column-reverse; }
+  .cp-cancel-btn, .cp-save-btn { width: 100%; justify-content: center; }
+}

@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+/* ─── PAGE ───────────────────────────────────────── */
+.reg-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ─── CARD ───────────────────────────────────────── */
+.reg-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 48px 48px 40px;
+  width: 100%;
+  max-width: 620px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+  animation: cardIn 0.5s ease;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── HEADER ─────────────────────────────────────── */
+.reg-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.reg-logo-dot {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #e67e22, #cf6d17);
+  border-radius: 14px;
+  margin: 0 auto 20px;
+  box-shadow: 0 6px 20px rgba(230,126,34,0.4);
+}
+
+.reg-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 8px;
+}
+
+.reg-header p {
+  font-size: 0.88rem;
+  color: #999;
+  margin: 0;
+}
+
+/* ─── FORM ───────────────────────────────────────── */
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reg-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.reg-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.reg-field label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ─── NAME & EMAIL INPUTS ────────────────────────── */
+.reg-input-box {
+  position: relative;
+  display: block;
+}
+
+.reg-input-box .reg-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  font-size: 0.82rem;
+  pointer-events: none;
+}
+
+.reg-input-box input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #f9f9f9;
+  border: 1.5px solid #ebebeb;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.reg-input-box input:focus {
+  border-color: #e67e22;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
+}
+
+.reg-input-box input::placeholder { color: #ccc; }
+
+/* ─── PASSWORD INPUT ─────────────────────────────── */
+.reg-password-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background: #f9f9f9;
+  border: 1.5px solid #ebebeb;
+  border-radius: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  padding: 0 14px;
+  height: 46px;
+}
+
+.reg-password-box:focus-within {
+  border-color: #e67e22;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
+}
+
+.reg-password-box .reg-input-icon {
+  color: #ccc;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.reg-password-box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  padding: 0;
+}
+
+.reg-password-box input::placeholder { color: #ccc; }
+
+.reg-eye {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #bbb;
+  font-size: 0.78rem;
+  padding: 0;
+  margin-left: 8px;
+  width: 16px;        /* 👈 ADD THIS */
+  height: 16px;       /* 👈 ADD THIS */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.reg-eye:hover { color: #666; }
+
+/* ─── ROLE SELECTOR ──────────────────────────────── */
+.reg-roles {
+  display: flex;
+  gap: 12px;
+}
+
+.reg-role {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 12px;
+  background: #f9f9f9;
+  border: 1.5px solid #ebebeb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  position: relative;
+  min-width: 0;
+}
+
+.reg-role:hover {
+  border-color: #e67e22;
+  background: #fff9f4;
+}
+
+.reg-role.active {
+  border-color: #e67e22;
+  background: #fff4ea;
+  box-shadow: 0 0 0 3px rgba(230,126,34,0.1);
+}
+
+.reg-role-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: #bbb;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+}
+
+.reg-role.active .reg-role-icon {
+  background: rgba(230,126,34,0.15);
+  color: #e67e22;
+}
+
+.reg-role-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.reg-role-name {
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.reg-role-desc {
+  font-size: 0.7rem;
+  color: #aaa;
+}
+
+.reg-role-check {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #e67e22;
+  font-size: 0.78rem;
+}
+
+/* ─── MESSAGES ───────────────────────────────────── */
+.reg-error {
+  background: #fff0f0;
+  border: 1px solid #fcc;
+  color: #c0392b;
+  font-size: 0.83rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.reg-success {
+  background: #f0fef4;
+  border: 1px solid #a9e9b8;
+  color: #1e7e34;
+  font-size: 0.83rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+/* ─── SUBMIT ─────────────────────────────────────── */
+.reg-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: #e67e22;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(230,126,34,0.35);
+  margin-top: 4px;
+}
+
+.reg-submit:hover:not(:disabled) {
+  background: #cf6d17;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(230,126,34,0.45);
+}
+
+.reg-submit:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.reg-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── SWITCH ─────────────────────────────────────── */
+.reg-switch {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #999;
+  margin-top: 20px;
+}
+
+.reg-switch a {
+  color: #e67e22;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.reg-switch a:hover { text-decoration: underline; }
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 560px) {
+  .reg-card  { padding: 32px 20px; }
+  .reg-row   { grid-template-columns: 1fr; }
+  .reg-roles { flex-direction: column; }
+}

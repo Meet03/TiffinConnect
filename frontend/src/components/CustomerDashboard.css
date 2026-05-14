@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* { box-sizing: border-box; }
+
+/* ─── PAGE ───────────────────────────────────────── */
+body {
+  background: #f4f5f7 !important;
+  margin: 0;
+}
+
+.cd-page {
+  min-height: 100vh;
+  background: #f4f5f7;
+  font-family: 'Poppins', sans-serif;
+  padding: 32px 24px 60px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ─── LOADING ────────────────────────────────────── */
+.cd-loading {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #888;
+  font-family: 'Poppins', sans-serif;
+}
+.cd-spinner {
+  width: 36px; height: 36px;
+  border: 3px solid rgba(230,126,34,0.2);
+  border-top-color: #e67e22;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── HEADER ─────────────────────────────────────── */
+.cd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.cd-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cd-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e67e22, #cf6d17);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.3rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(230,126,34,0.35);
+}
+.cd-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cd-greeting {
+  font-size: 0.82rem;
+  color: #999;
+  margin: 0 0 2px;
+}
+
+.cd-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.cd-notify-btn {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1.5px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #555;
+  font-size: 1rem;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.cd-notify-btn:hover { background: #f0f0f0; }
+
+.cd-notify-dot {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 8px; height: 8px;
+  background: #e67e22;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+/* ─── STATS ──────────────────────────────────────── */
+.cd-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.cd-stat-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cd-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.cd-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin: 0 auto 10px;
+}
+
+.cd-stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.cd-stat-label {
+  font-size: 0.72rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ─── SECTIONS ───────────────────────────────────── */
+.cd-section {
+  margin-bottom: 32px;
+}
+
+.cd-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.cd-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 16px;
+}
+
+.cd-section-header .cd-section-title { margin: 0; }
+
+.cd-see-all {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #e67e22;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+.cd-see-all:hover { gap: 10px; }
+
+/* ─── QUICK ACTIONS ──────────────────────────────── */
+.cd-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.cd-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  background: #fff;
+  border: 1.5px solid #ebebeb;
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #333;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: left;
+}
+.cd-action-btn:hover {
+  border-color: #e67e22;
+  background: #fff9f4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230,126,34,0.12);
+}
+.cd-action-btn.primary {
+  background: #e67e22;
+  border-color: #e67e22;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(230,126,34,0.35);
+}
+.cd-action-btn.primary:hover {
+  background: #cf6d17;
+  border-color: #cf6d17;
+  box-shadow: 0 6px 20px rgba(230,126,34,0.45);
+}
+
+.cd-action-arrow {
+  margin-left: auto;
+  font-size: 0.75rem;
+  opacity: 0.6;
+}
+
+/* ─── ORDERS LIST ────────────────────────────────── */
+.cd-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cd-order-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.2s;
+}
+.cd-order-card:hover { transform: translateX(4px); }
+
+.cd-order-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #f4f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.cd-order-info { flex: 1; min-width: 0; }
+
+.cd-order-provider {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cd-order-plan {
+  font-size: 0.8rem;
+  color: #777;
+  margin-bottom: 2px;
+}
+
+.cd-order-dates {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.cd-order-status {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 99px;
+  text-transform: capitalize;
+  flex-shrink: 0;
+}
+
+/* ─── EMPTY STATE ────────────────────────────────── */
+.cd-empty {
+  background: #fff;
+  border-radius: 16px;
+  padding: 48px 24px;
+  text-align: center;
+  border: 1.5px dashed #ebebeb;
+  color: #aaa;
+}
+.cd-empty svg, .cd-empty .svg-inline--fa {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  color: #ddd;
+}
+.cd-empty p {
+  margin: 0 0 20px;
+  font-size: 0.9rem;
+}
+.cd-empty-btn {
+  padding: 10px 24px;
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cd-empty-btn:hover { background: #cf6d17; }
+
+/* ─── NOTIFICATIONS ──────────────────────────────── */
+.cd-notifications {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cd-notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+
+.cd-notif-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.cd-notif-icon.orange { background: rgba(230,126,34,0.12); color: #e67e22; }
+.cd-notif-icon.green  { background: rgba(39,174,96,0.12);  color: #27ae60; }
+.cd-notif-icon.blue   { background: rgba(41,128,185,0.12); color: #2980b9; }
+
+.cd-notif-text {
+  font-size: 0.88rem;
+  color: #444;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.cd-notif-time {
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .cd-stats   { grid-template-columns: repeat(2, 1fr); }
+  .cd-actions { grid-template-columns: 1fr; }
+  .cd-page    { padding: 24px 16px 48px; }
+}

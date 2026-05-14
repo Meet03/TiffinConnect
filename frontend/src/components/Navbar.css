@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ─── NAVBAR ─────────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a1a2e;
+  padding: 0 48px;
+  height: 68px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ─── LOGO ───────────────────────────────────────── */
+.navbar-logo img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+/* ─── DESKTOP LINKS ──────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+/* Role badge shown when logged in */
+.nav-role-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #e67e22;
+  background: rgba(230,126,34,0.15);
+  border: 1px solid rgba(230,126,34,0.3);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+/* Logout button */
+.nav-btn-logout {
+  padding: 8px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: rgba(231,76,60,0.2);
+  border: 1px solid rgba(231,76,60,0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.nav-btn-logout:hover {
+  background: rgba(231,76,60,0.38);
+  border-color: rgba(231,76,60,0.7);
+}
+
+/* Get Started / Register button */
+.nav-btn-register {
+  padding: 9px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: #e67e22;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 3px 12px rgba(230,126,34,0.35);
+}
+.nav-btn-register:hover {
+  background: #cf6d17;
+  transform: translateY(-1px);
+}
+
+/* ─── HAMBURGER ──────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.hamburger:hover { background: rgba(255,255,255,0.08); }
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Animate to X when open */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ─── MOBILE MENU ────────────────────────────────── */
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  background: #1a1a2e;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-direction: column;
+  padding: 16px 24px 24px;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.mobile-link {
+  display: block;
+  padding: 12px 16px;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  text-align: left;
+  width: 100%;
+}
+.mobile-link:hover { background: rgba(255,255,255,0.07); color: #fff; }
+
+.mobile-link.register {
+  background: #e67e22;
+  color: #fff;
+  text-align: center;
+  margin-top: 4px;
+}
+.mobile-link.register:hover { background: #cf6d17; }
+
+.mobile-link.logout {
+  color: rgba(231,76,60,0.85);
+  border: 1px solid rgba(231,76,60,0.2);
+}
+.mobile-link.logout:hover {
+  background: rgba(231,76,60,0.12);
+  color: #e74c3c;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 640px) {
+  .navbar { padding: 0 20px; position: relative; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: flex; }
+}

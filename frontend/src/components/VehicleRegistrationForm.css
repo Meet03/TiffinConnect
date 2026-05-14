@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+* { box-sizing: border-box; }
+.vrf-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+.vrf-modal { background: #fff; border-radius: 20px; padding: 32px; width: 100%; max-width: 480px; box-shadow: 0 20px 60px rgba(0,0,0,0.25); }
+.vrf-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: #1a1a2e; margin: 0 0 24px; }
+.vrf-vehicle-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 20px; }
+.vrf-vehicle-btn { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 12px 8px; font-size: 0.78rem; font-weight: 500; font-family: 'Poppins', sans-serif; background: #f9f9f9; border: 1.5px solid #ebebeb; border-radius: 10px; cursor: pointer; transition: all 0.2s; color: #777; }
+.vrf-vehicle-btn.active { border-color: #e67e22; background: rgba(230,126,34,0.1); color: #e67e22; font-weight: 600; }
+.vrf-vehicle-btn svg { font-size: 1.2rem; }
+.vrf-form { display: flex; flex-direction: column; gap: 16px; }
+.vrf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.vrf-field { display: flex; flex-direction: column; gap: 6px; }
+.vrf-field label { font-size: 0.78rem; font-weight: 600; color: #444; display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: 0.03em; }
+.vrf-field label svg { color: #e67e22; font-size: 0.72rem; }
+.vrf-field input { width: 100%; padding: 11px 14px; font-size: 0.9rem; font-family: 'Poppins', sans-serif; color: #333; background: #f9f9f9; border: 1.5px solid #ebebeb; border-radius: 9px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+.vrf-field input:focus { border-color: #e67e22; background: #fff; box-shadow: 0 0 0 3px rgba(230,126,34,0.1); }
+.vrf-field input::placeholder { color: #ccc; }
+.vrf-message { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 9px; font-size: 0.84rem; font-weight: 500; }
+.vrf-message.success { background: #f0fef4; border: 1px solid #a9e9b8; color: #1e7e34; }
+.vrf-message.error { background: #fff0f0; border: 1px solid #fcc; color: #c0392b; }
+.vrf-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 4px; }
+.vrf-cancel { padding: 11px 22px; font-size: 0.88rem; font-weight: 500; font-family: 'Poppins', sans-serif; color: #777; background: #f4f5f7; border: 1.5px solid #ebebeb; border-radius: 9px; cursor: pointer; }
+.vrf-save { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 28px; font-size: 0.88rem; font-weight: 600; font-family: 'Poppins', sans-serif; color: #fff; background: #e67e22; border: none; border-radius: 9px; cursor: pointer; min-width: 100px; box-shadow: 0 4px 14px rgba(230,126,34,0.3); }
+.vrf-save:hover:not(:disabled) { background: #cf6d17; }
+.vrf-save:disabled { opacity: 0.7; cursor: not-allowed; }
+.vrf-spinner { width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.4); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; display: inline-block; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (max-width: 400px) { .vrf-row { grid-template-columns: 1fr; } .vrf-vehicle-grid { grid-template-columns: repeat(2,1fr); } }

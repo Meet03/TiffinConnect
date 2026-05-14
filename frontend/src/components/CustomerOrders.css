@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* { box-sizing: border-box; }
+
+/* ─── PAGE ───────────────────────────────────────── */
+.co-page {
+  min-height: 100vh;
+  background: #f4f5f7;
+  font-family: 'Poppins', sans-serif;
+  padding: 32px 24px 60px;
+}
+
+.co-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ─── LOADING / ERROR ────────────────────────────── */
+.co-loading {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #888;
+  font-family: 'Poppins', sans-serif;
+}
+
+.co-spinner {
+  width: 36px; height: 36px;
+  border: 3px solid rgba(230,126,34,0.2);
+  border-top-color: #e67e22;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.co-error-msg {
+  color: #c0392b;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.co-retry-btn {
+  padding: 10px 24px;
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ─── BACK BUTTON ────────────────────────────────── */
+.co-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  font-size: 0.88rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 28px;
+  transition: color 0.2s, gap 0.2s;
+}
+.co-back-btn:hover { color: #e67e22; gap: 12px; }
+
+/* ─── HEADER ─────────────────────────────────────── */
+.co-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.co-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 6px;
+}
+
+.co-header p {
+  font-size: 0.88rem;
+  color: #999;
+  margin: 0;
+}
+
+.co-header-icon {
+  font-size: 2rem;
+  color: rgba(230,126,34,0.2);
+}
+
+/* ─── FILTER TABS ────────────────────────────────── */
+.co-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.co-filter-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  color: #888;
+  background: #fff;
+  border: 1.5px solid #ebebeb;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+.co-filter-tab:hover { border-color: #ccc; color: #555; }
+.co-filter-tab.active {
+  border-color: #1a1a2e;
+  color: #1a1a2e;
+  background: #fff;
+  font-weight: 600;
+}
+
+.co-filter-count {
+  background: #f0f0f0;
+  color: #888;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: 99px;
+  min-width: 20px;
+  text-align: center;
+}
+.co-filter-tab.active .co-filter-count {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+/* ─── ORDER LIST ─────────────────────────────────── */
+.co-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ─── ORDER CARD ─────────────────────────────────── */
+.co-card {
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: fadeUp 0.3s ease;
+}
+.co-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.co-card-accent {
+  width: 5px;
+  flex-shrink: 0;
+  border-radius: 0;
+}
+
+.co-card-body {
+  flex: 1;
+  padding: 20px 24px;
+  min-width: 0;
+}
+
+/* Top row */
+.co-card-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.co-card-status-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.co-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.co-card-provider {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.co-card-provider svg { color: #aaa; font-size: 0.75rem; }
+
+.co-card-plan {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: #888;
+}
+.co-card-plan svg { color: #ccc; font-size: 0.72rem; }
+
+.co-status-badge {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 99px;
+  text-transform: capitalize;
+}
+
+/* Divider */
+.co-card-divider {
+  height: 1px;
+  background: #f0f0f0;
+  margin-bottom: 16px;
+}
+
+/* Dates */
+.co-card-dates {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.co-date-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+.co-date-item svg { font-size: 0.78rem; }
+
+.co-date-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #bbb;
+  margin-bottom: 2px;
+}
+
+.co-date-value {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.co-date-arrow {
+  color: #ddd;
+  font-size: 1rem;
+}
+
+/* Order ID */
+.co-order-id {
+  margin-top: 12px;
+  font-size: 0.72rem;
+  color: #ccc;
+  font-family: monospace;
+}
+.co-order-id span { color: #aaa; }
+
+/* ─── EMPTY STATE ────────────────────────────────── */
+.co-empty {
+  text-align: center;
+  padding: 80px 24px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1.5px dashed #ebebeb;
+  color: #aaa;
+}
+.co-empty .svg-inline--fa {
+  font-size: 3rem;
+  color: #ddd;
+  display: block;
+  margin: 0 auto 20px;
+}
+.co-empty h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #555;
+  margin: 0 0 10px;
+}
+.co-empty p {
+  font-size: 0.9rem;
+  margin: 0 0 24px;
+}
+.co-browse-btn {
+  padding: 10px 24px;
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.co-browse-btn:hover { background: #cf6d17; }
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 560px) {
+  .co-page        { padding: 24px 16px 48px; }
+  .co-card-body   { padding: 16px; }
+  .co-card-dates  { flex-direction: column; gap: 8px; }
+  .co-date-arrow  { display: none; }
+  .co-filters     { gap: 8px; }
+  .co-filter-tab  { padding: 7px 12px; font-size: 0.78rem; }
+}

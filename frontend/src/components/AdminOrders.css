@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+* { box-sizing: border-box; }
+.ao-page { min-height: 100vh; background: #f4f5f7; font-family: 'Poppins', sans-serif; padding: 32px 24px 60px; }
+.ao-container { max-width: 900px; margin: 0 auto; }
+.ao-loading { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: #888; font-family: 'Poppins', sans-serif; }
+.ao-spinner { width: 36px; height: 36px; border: 3px solid rgba(230,126,34,0.2); border-top-color: #e67e22; border-radius: 50%; animation: spin 0.8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ao-err { color: #c0392b; font-size: 0.9rem; }
+.ao-back-btn { display: inline-flex; align-items: center; gap: 8px; background: none; border: none; cursor: pointer; color: #777; font-size: 0.88rem; font-family: 'Poppins', sans-serif; font-weight: 500; padding: 0; margin-bottom: 28px; transition: color 0.2s, gap 0.2s; }
+.ao-back-btn:hover { color: #8e44ad; gap: 12px; }
+.ao-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+.ao-header h1 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: #1a1a2e; margin: 0 0 6px; }
+.ao-header p { font-size: 0.88rem; color: #999; margin: 0; }
+.ao-header-icon { font-size: 2rem; color: rgba(142,68,173,0.2); }
+.ao-filters { display: flex; gap: 10px; margin-bottom: 28px; flex-wrap: wrap; }
+.ao-tab { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px; font-size: 0.82rem; font-weight: 500; font-family: 'Poppins', sans-serif; color: #888; background: #fff; border: 1.5px solid #ebebeb; border-radius: 99px; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+.ao-tab.active { border-color: #1a1a2e; color: #1a1a2e; font-weight: 600; }
+.ao-count { background: #f0f0f0; color: #888; font-size: 0.72rem; font-weight: 600; padding: 1px 7px; border-radius: 99px; min-width: 20px; text-align: center; }
+.ao-tab.active .ao-count { background: #1a1a2e; color: #fff; }
+.ao-list { display: flex; flex-direction: column; gap: 14px; }
+.ao-card { display: flex; background: #fff; border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); overflow: hidden; transition: transform 0.2s; }
+.ao-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+.ao-accent { width: 5px; flex-shrink: 0; }
+.ao-body { flex: 1; padding: 18px 22px; min-width: 0; }
+.ao-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.ao-icon { width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+.ao-info { flex: 1; min-width: 0; }
+.ao-customer { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; font-weight: 600; color: #1a1a2e; margin-bottom: 4px; }
+.ao-customer svg { color: #aaa; font-size: 0.75rem; }
+.ao-provider { display: flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #888; }
+.ao-provider svg { color: #ccc; font-size: 0.72rem; }
+.ao-badge { flex-shrink: 0; font-size: 0.72rem; font-weight: 600; padding: 4px 12px; border-radius: 99px; text-transform: capitalize; }
+.ao-divider { height: 1px; background: #f0f0f0; margin-bottom: 14px; }
+.ao-assign-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.ao-driver-info { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #888; }
+.ao-driver-info svg { color: #2980b9; }
+.ao-assign-controls { display: flex; align-items: center; gap: 8px; }
+.ao-driver-select { padding: 8px 12px; font-size: 0.82rem; font-family: 'Poppins', sans-serif; color: #333; background: #f9f9f9; border: 1.5px solid #ebebeb; border-radius: 8px; outline: none; cursor: pointer; transition: border-color 0.2s; }
+.ao-driver-select:focus { border-color: #2980b9; }
+.ao-driver-select.success { border-color: #27ae60; background: #f0fef4; }
+.ao-assign-success { display: flex; align-items: center; gap: 5px; font-size: 0.78rem; font-weight: 600; color: #27ae60; white-space: nowrap; }
+.ao-delete-btn { width: 34px; height: 34px; border-radius: 8px; background: rgba(231,76,60,0.1); border: 1.5px solid rgba(231,76,60,0.25); color: #e74c3c; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
+.ao-delete-btn:hover { background: #e74c3c; color: #fff; border-color: #e74c3c; }
+.ao-order-id { margin-top: 10px; font-size: 0.7rem; color: #ccc; font-family: monospace; }
+.ao-order-id span { color: #aaa; }
+.ao-empty { text-align: center; padding: 80px 24px; background: #fff; border-radius: 16px; border: 1.5px dashed #ebebeb; color: #aaa; }
+.ao-empty .svg-inline--fa { font-size: 3rem; color: #ddd; display: block; margin: 0 auto 20px; }
+.ao-empty h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #555; margin: 0 0 10px; }
+.ao-empty p { font-size: 0.9rem; margin: 0; }
+.ao-modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; z-index: 1000; }
+.ao-modal { background: #fff; border-radius: 16px; padding: 32px; max-width: 360px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.25); text-align: center; position: relative; }
+.ao-modal-x { position: absolute; top: 12px; right: 12px; width: 28px; height: 28px; border-radius: 7px; background: #f4f5f7; border: none; cursor: pointer; color: #888; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; }
+.ao-modal h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #1a1a2e; margin: 0 0 10px; }
+.ao-modal p { font-size: 0.88rem; color: #888; margin: 0 0 24px; }
+.ao-modal-actions { display: flex; gap: 10px; }
+.ao-modal-cancel { flex: 1; padding: 11px; font-size: 0.88rem; font-weight: 500; font-family: 'Poppins', sans-serif; color: #777; background: #f4f5f7; border: 1.5px solid #ebebeb; border-radius: 9px; cursor: pointer; }
+.ao-modal-confirm { flex: 1; padding: 11px; font-size: 0.88rem; font-weight: 600; font-family: 'Poppins', sans-serif; color: #fff; background: #e74c3c; border: none; border-radius: 9px; cursor: pointer; }
+@media (max-width: 560px) { .ao-page { padding: 24px 16px 48px; } .ao-assign-row { flex-direction: column; align-items: flex-start; } }
