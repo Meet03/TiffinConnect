@@ -1,8 +1,0 @@
-meetamin65_db_user
-hpEDO6GD38LSoFCc
-
-mongodb+srv://meetamin65_db_user:yUS1WEX1cuFRcuW4@tiffinconnect.3esluzk.mongodb.net/?appName=TiffinConnect
-
-
-admin@tiffinconnect.com
-Admin@1234
